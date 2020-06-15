@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //defines what 1rem is, thats why it is in base, not typography
+  font-size: 62.5%;
+  /* allow user to zoom in on font size and page 
+     x % of the default browser font size 
+  */
+}
+
+body {
+  box-sizing: border-box;
+}
