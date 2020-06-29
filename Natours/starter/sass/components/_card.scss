@@ -74,6 +74,9 @@
       100% 85%,
       0 100%
     ); //use webkit so it works in all browsers (first prefixes, then official)
+    border-top-left-radius: 3px; //clip path overwrites overflow hidden
+    border-top-right-radius: 3px; //have to set manually
+
     &--1 {
       background-image: linear-gradient(
           to right bottom,
