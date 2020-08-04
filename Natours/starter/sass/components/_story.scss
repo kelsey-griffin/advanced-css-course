@@ -21,7 +21,7 @@
     //only works with webkit on safari
     clip-path: circle(50% at 50% 50%);
     -webkit-clip-path: circle(50% at 50% 50%);
-
+    overflow: hidden;
     transform: translateX(-3rem) skewX(12deg);
   }
 
