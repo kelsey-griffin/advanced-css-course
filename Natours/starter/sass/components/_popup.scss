@@ -9,6 +9,9 @@
   left: 0;
   background-color: rgba($color-black, 0.8);
   z-index: 9999;
+
+  transition: all 0.3s;
+
   &__content {
     @include center-horizontal-vertical;
     width: 75%;
@@ -17,6 +20,12 @@
     border-radius: 3px;
     display: table;
     overflow: hidden;
+    transition: all 0.5s 0.2s;
+
+    //closed state for popup
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    //need to repeate translate in mixin bc can't have 2 translate
   }
 
   &__left {
@@ -49,5 +58,37 @@
     -ms-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto; //language must be defined in html header
+  }
+
+  //open state for popup
+  &:target {
+    //as soon as this element become target
+    // href="#popup"
+    visibility: visible;
+    opacity: 1;
+  }
+  //open state for popup content
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      line-height: 1;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 }
