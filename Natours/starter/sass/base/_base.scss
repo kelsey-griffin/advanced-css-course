@@ -12,6 +12,23 @@ html {
   /* allow user to zoom in on font size and page 
      x % of the default browser font size 
   */
+
+  // @media (max-width: 600px) {
+  //   font-size: 50%;
+  // }
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+  @include respond(tab-port) {
+    font-size: 60%;
+  }
+  @include respond(tab-land) {
+    font-size: 70%;
+  }
+  @include respond(big-desktop) {
+    font-size: 80%;
+  }
 }
 
 body {

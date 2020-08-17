@@ -1,3 +1,17 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet, portrait
+900 - 1200px:   Tablet, landscape
+1200 - 1800px:  Desktop [normal styles apply here - used desktop first approach]
+> 1800px:       Large desktop
+
+$breakpoint arg choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -38,6 +52,18 @@ html {
   /* allow user to zoom in on font size and page 
      x % of the default browser font size 
   */ }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 60%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 70%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 80%; } }
 
 body {
   box-sizing: border-box; }
@@ -480,8 +506,9 @@ body {
     border-radius: 3px;
     display: table;
     overflow: hidden;
+    transition: all 0.5s 0.2s;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5); }
+    transform: translate(-50%, -50%) scale(0.25); }
   .popup__left {
     width: 33.33333%;
     display: table-cell; }
