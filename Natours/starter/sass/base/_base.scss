@@ -8,26 +8,34 @@
 
 html {
   //defines what 1rem is, thats why it is in base, not typography
-  font-size: 62.5%;
+
   /* allow user to zoom in on font size and page 
-     x % of the default browser font size 
+  x % of the default browser font size 
   */
 
-  // @media (max-width: 600px) {
-  //   font-size: 50%;
-  // }
+  //default - desktop
+  // 1 rem = 10px;
+  // 10px / 16px = 62.5%
 
-  @include respond(phone) {
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    //width < 1200? || bigger one first!
+    //1rem = 9px; 9/16 = 56.25%
+    font-size: 56.25%;
+  }
+
+  //tab port and phone would be same so only need to include the bigger max-width
+  @include respond(tab-port) {
+    //width < 900?
+    //1rem = 8px; 8/16 = 50%
     font-size: 50%;
   }
-  @include respond(tab-port) {
-    font-size: 60%;
-  }
-  @include respond(tab-land) {
-    font-size: 70%;
-  }
+
   @include respond(big-desktop) {
-    font-size: 80%;
+    //1rem = 12px; 12/16 = 75%
+
+    font-size: 75%;
   }
 }
 
