@@ -20,7 +20,7 @@ html {
   font-size: 62.5%;
 
   @include respond(tab-land) {
-    //width < 1200? || bigger one first!
+    //width < 1200? || bigger one first when using desktop first
     //1rem = 9px; 9/16 = 56.25%
     font-size: 56.25%;
   }
@@ -41,4 +41,5 @@ html {
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
 }
